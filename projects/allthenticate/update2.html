@@ -717,24 +717,24 @@ const thebe_selector_output = ".output, .cell_output"
 <h2><strong>Initial Efforts/findings</strong><a class="headerlink" href="#initial-efforts-findings" title="Permalink to this headline">¶</a></h2>
 <p>Since much of our logging infrastructure was still in development, we spent significant time finalizing log format and structure into something standard. This can be seen and explained by Table 1 and 2. These logs capture information about user actions in the phone app, communication between phones and devices over bluetooth, and communication between phones and computers over FCM.</p>
 <p>We have generated several real time visualizations in the Kibana dashboard on our Elastic instance running on AWS. The first set of visualizations (Figures 1-4) show relevant real time use data for identifying issues within the application. One can infer from a spike of users opening and closing an application, turning bluetooth on and off, or refreshing the app that there is an issue with the performance of the app. Additionally, if there is a spike in messages about the phone trying to connect to local devices, there is clearly an issue on the backend of the app or device infrastructure. Figures 5 and 6 show the distribution of lock and unlock times, and can be used to identify abnormally long unlock or lock times in real time, another method for identifying issues in the company infrastructure.</p>
-<p><img alt="" src="projects/allthenticate/images/app_launched_closed.png" /></p>
+<p><img alt="" src="../../_images/app_launched_closed.png" /></p>
 <p align="center">
 <em>Figure 1. Count of Apps. Launched/Closed from 15.00hrs to 00.00hrs.</em>
 </p> 
-<p><img alt="" src="projects/allthenticate/images/ble_enabled_disabled.png" /></p>
+<p><img alt="" src="../../_images/ble_enabled_disabled.png" /></p>
 <p align="center">
 <em>Figure 2. Count of Bluetooth Connections/Disconnections from 15.00hrs to 00.00hrs.</em>
 </p> 
-<p><img alt="" src="projects/allthenticate/images/app_refreshed.png" /></p>
+<p><img alt="" src="../../_images/app_refreshed.png" /></p>
 <p align="center">
 <em>Figure 3. Count of times App is refreshed from 15.00hrs to 00.00hrs.</em>
 </p>
-<p><img alt="" src="projects/allthenticate/images/device_connecting_not_connecting.png" /></p>
+<p><img alt="" src="../../_images/device_connecting_not_connecting.png" /></p>
 <p align="center">
 <em>Figure 4. Device connecting to phone/ Device in range but not connecting from 15.00hrs to 00.00hrs.</em>
 </p> 
 <p>Beyond real-time visualization work, we have begun work towards generating meaningful static visualizations for deeper insights into the functionality of the company’s products. This work has been somewhat slow as the updated app has yet to be deployed to all users, but we have worked to create a secure method for accessing data within a Python script using credentials that are ignored from Github commits. Additionally, we have created a script for cleaning and formatting the data in a structure that will allow for time series analysis, with logs divided by each unique phone ID and device ID in order of the log’s timestamp.</p>
-<p><img alt="" src="projects/allthenticate/images/lock_unlock_time.png" /></p>
+<p><img alt="" src="../../_images/lock_unlock_time.png" /></p>
 <p align="center">
 <em>Figures 5,6. Histogram on time taken to lock/unlock a device.</em>
 </p> 
